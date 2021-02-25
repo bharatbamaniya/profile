@@ -97,9 +97,14 @@ h3 {
 
 .nav-brand {
   font-weight: bold;
+  display: inline;
 }
 .nav-brand span {
   color: yellow;
+}
+
+.navigation ul {
+  display: inline;
 }
 
 .nav-pills {
@@ -115,8 +120,42 @@ h3 {
   max-width: 350px;
   display: block;
   margin: auto;
+  width: 100%;
 }
 
+@media screen and (min-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 60% 40%;
+  }
+  .hero .hero-img {
+    grid-column: 2;
+  }
+  .hero .hero-heading {
+    grid-column: 1;
+    align-self: center;
+  }
+  .nav-brand {
+    grid-column: 1;
+  }
+  .navigation ul {
+    margin: 0;
+    grid-column: 2;
+  }
+  .navigation .list-non-bullet .list-item-inline {
+    display: inline;
+  }
+  .navigation {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.navigation ul .list-item-inline {
+  display: block;
+}
 .hero .hero-heading {
   padding-top: 1rem;
   color: var(--dark-gray);
@@ -141,7 +180,7 @@ h3 {
 
 .footer {
   background: var(--primary);
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   text-align: center;
   color: white;
   border-top-right-radius: 1rem;
