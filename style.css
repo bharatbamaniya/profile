@@ -72,6 +72,7 @@ h3 {
 .primary-link {
   background: var(--primary);
   color: white;
+  border: 1px solid var(--primary-color);
 }
 
 .secondary-link {
@@ -229,10 +230,14 @@ h3 {
   padding-inline-start: 0;
 }
 
-.text-psuado {
+/*  */
+.text-psuado,
+.text-psuado-inverted {
   position: relative;
 }
-.text-psuado::before {
+
+.text-psuado::before,
+.text-psuado-inverted::before {
   z-index: -1;
   content: "";
   display: block;
@@ -245,20 +250,30 @@ h3 {
   border-radius: 0.5rem;
   transition: 0.3s ease-in-out;
 }
-.text-psuado:hover::before {
-  background: var(--primary-color);
+.text-psuado:hover::before,
+.text-psuado-inverted:hover::before {
   width: 100%;
   left: 0;
   right: 0;
 }
+.text-psuado:hover::before {
+  background: var(--primary-color);
+}
+.text-psuado-inverted:hover::before {
+  background: white;
+}
 .text-psuado:hover {
   color: white;
 }
-.text-psuado:active {
+.text-psuado-inverted:hover {
+  color: var(--primary-color);
+  background: none;
+}
+.text-psuado:active,
+.text-psuado-inverted:active {
   color: var(--dark-gray);
 }
-.contact-links {
-}
+
 .contact-links h1,
 h2,
 p {
