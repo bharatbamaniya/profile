@@ -23,7 +23,21 @@ body::before {
     background-attachment: fixed;
   }
 }
-
+@media (max-width: 992px) {
+  body::before {
+    filter: brightness(80%);
+  }
+}
+@media (max-width: 768px) {
+  body::before {
+    filter: brightness(60%);
+  }
+}
+@media (max-width: 420px) {
+  body::before {
+    filter: brightness(40%);
+  }
+}
 a {
   color: #18d26e;
   text-decoration: none;
@@ -80,6 +94,7 @@ h6 {
   font-size: 24px;
   margin-top: 20px;
   color: rgba(255, 255, 255, 0.8);
+  text-align: center;
 }
 
 #header h2 span {
